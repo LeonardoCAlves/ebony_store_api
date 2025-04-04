@@ -1,0 +1,34 @@
+@echo off
+SET project=flask_api_vendas
+
+:: Criar pasta principal
+mkdir %project%
+cd %project%
+
+:: Criar ambiente virtual
+python -m venv venv
+
+:: Criar pastas do projeto
+mkdir app
+mkdir migrations
+mkdir tests
+
+:: Criar arquivos dentro da pasta app
+cd app
+type nul > __init__.py
+type nul > models.py
+type nul > routes.py
+type nul > database.py
+type nul > services.py
+type nul > schemas.py
+type nul > utils.py
+cd ..
+
+:: Criar arquivos na raiz
+type nul > .env
+type nul > config.py
+type nul > requirements.txt
+type nul > run.py
+type nul > README.md
+
+echo Estrutura criada com sucesso!
